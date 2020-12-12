@@ -1,0 +1,88 @@
+{% include "views/default/header.html" %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h5>Sala {{ sala.Numero}}</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {% if sala.Disponible %}
+                                    <p class="text-success">Entradas disponibles</p>
+                                    {% else %}
+                                    <p class="text-danger">Entradas agotadas</p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Pelicula</h5>
+                                    <h5>{{ sala.PeliculaId }}</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Horario</h5>
+                                    <h5>{{ sala.Horario }}</h5>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>
+                        Sipnosis
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>{{ sala.PeliculaId.Sipnosis }}</p>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>
+                        Duración
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- <p>{{ categoria.Nombre }}</p> -->
+                        <p>{{ sala.PeliculaId.Duracion }} minutos</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Año de estreno
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>{{ sala.PeliculaId.Anio}}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h5><a href="{% url 'salas' %}">Anterior</a></h5>
+
+    </div>
+
+    {% include "views/default/footer.html" %}

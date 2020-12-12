@@ -1,0 +1,37 @@
+{% include "views/default/header.html" %}
+<div class="container">
+    <div class="row">
+        {% if salas_list %}
+        {% for sala in salas_list %}
+        <div class="col-xs-4 col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Sala {{sala.Numero}}</h5>
+                    <p class="card-text">{{ sala.PeliculaId}}</p>
+                    <p class="card-text">{{ sala.Horario }}</p>
+                    <p><a href="detalleSala/{{ sala.SalaId }}">Información</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+        {% else %}
+        <p>No hay salas disponibles.</p>
+        {% endif %}
+    </div>
+{% if salas_list.has_next or salas_list.has_previous %}
+<ul class="pagination">
+
+    {% for page in salas_list.paginator.page_range %}
+    <a class="{% if salas_list.number == page %}active{% endif %}">
+        <a class="btn btnpages text-light" href="?page={{ page }}">Sala{{ page }}</a>
+    </a>
+
+    {% endfor %}
+
+</ul>
+
+{% endif %}    
+</div>
+
+{% include "views/default/footer.html" %}

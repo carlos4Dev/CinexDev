@@ -1,0 +1,37 @@
+{% include "views/default/header.html" %}
+<div class="container">
+    <div class="row">
+        {% if peliculas_list %}
+        {% for pelicula in peliculas_list %}
+        <div class="col-xs-4 col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{pelicula.Titulo}}</h5>
+                    <p class="card-text">{{ pelicula.Director}} </p>
+                    <p class="card-text">{{ pelicula.Duracion}} minutos</p>
+                    <p class="card-text">Estreno {{ pelicula.Anio }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+       
+        {% else %}
+        <p>No hay peliculas disponibles.</p>
+        {% endif %}
+    </div>
+{% if peliculas_list.has_next or peliculas_list.has_previous %}
+<ul class="pagination">
+
+    {% for page in peliculas_list.paginator.page_range %}
+    <a class="{% if salas_list.number == page %}active{% endif %}">
+        <a class="btn btnpages text-light" href="?page={{ page }}">Página {{ page }}</a>
+    </a>
+
+    {% endfor %}
+
+</ul>
+
+{% endif %}    
+</div>
+
+{% include "views/default/footer.html" %}

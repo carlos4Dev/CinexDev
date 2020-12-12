@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+    color: goldenrod
+}
+
+.bg-personal {
+    background-color: black;
+}
+.imglogo {
+    max-width: 40%;
+}
+.navbar-brand {
+    max-width: 15%;
+}
+.imgSlider {
+    max-width: 80%;
+}
+.sheetSlider {
+    text-align: center;
+}
+
+

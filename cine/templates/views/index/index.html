@@ -1,0 +1,69 @@
+{% include "views/default/header.html" %}
+{%load static %}
+<div class="sheetSlider sh--default">
+    <input id="s1" type="radio" name="slide1" checked />
+    <input id="s2" type="radio" name="slide1" />
+    <input id="s3" type="radio" name="slide1" />
+    <input id="s4" type="radio" name="slide1" />
+    <div class="sh__content">
+        <!-- Slider Item-->
+        <div class="sh__item">
+            <img src="{% static 'images/sala_negro_rojo.png' %}" atl="imgText" class="imgSlider" />
+            <!-- Item Info -->
+            <div class="sh__meta">
+                <h4>El mejor cine para desarrolladores</h4>
+                <span>Las mejores peliculas</span>
+            </div>
+        </div>
+        <!-- Slider Item-->
+        <div class="sh__item">
+            <img src="{% static 'images/sala_frente.png' %}" atl="imgText" class="imgSlider" />
+            <!-- Item Info -->
+            <div class="sh__meta">
+                <h4>4 impresionantes salas</h4>
+                <span>
+                    Elija la que más le guste
+                </span>
+            </div>
+        </div>
+        <!-- Slider Item-->
+        <div class="sh__item">
+            <img src="{% static 'images/interior2.png' %}" atl="imgText" class="imgSlider" />
+            <!-- Item Info -->
+            <div class="sh__meta">
+                <h4>Disfruta</h4>
+                <span>
+                    Solo o con la mejor compañía
+                </span>
+            </div>
+        </div>
+        <!-- Slider Item-->
+        <div class="sh__item">
+            <img src="{% static 'images/interior.png' %}" atl="imgText" class="imgSlider" />
+            <!-- Item Info -->
+            <div class="sh__meta">
+                <h4>Gran resolución</h4>
+                <span>
+                    Todo el contenido disponible en 8K
+                </span>
+            </div>
+        </div>
+        <!-- Slider Item-->
+        
+    </div>
+    <!--botones-->
+    <div class="sh_btns">
+        <label for="s1"></label>
+        <label for="s2"></label>
+        <label for="s3"></label>
+        <label for="s4"></label>
+    </div><!-- .sh__botones-->
+    <!--flechas-->
+    <div class="sh__arrows">
+        <label for="s1"></label>
+        <label for="s2"></label>
+        <label for="s3"></label>
+        <label for="s4"></label>
+    </div><!-- .sh__arrows-->
+</div>
+{% include "views/default/footer.html" %}
