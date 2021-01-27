@@ -4,6 +4,7 @@ from django.db import models
 class Peliculas(models.Model):
     PeliculaId = models.AutoField(primary_key=True)
     Titulo = models.CharField(max_length=200)
+    Imagen = models.ImageField(null=True, default=0, upload_to='images/pelis')
     Director = models.CharField(max_length=200)
     Anio = models.IntegerField(default=0, verbose_name="Año")
     Pais = models.CharField(max_length=50)

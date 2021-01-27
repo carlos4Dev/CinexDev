@@ -5,9 +5,13 @@
         {% for sala in salas_list %}
         <div class="col-xs-4 col-md-3">
             <div class="card">
-                <div class="card-body">
+                <div class="card-header" style="background-color: darkgray; text-align: center; color: black;">
                     <h5>Sala {{sala.Numero}}</h5>
-                    <p class="card-text">{{ sala.PeliculaId}}</p>
+                </div>
+                <div class="card-body" style="background-color: black;">
+                    <img src="/media/{{ sala.PeliculaId.Imagen }}" class="thumbnails"/>
+                </div>
+                <div class="card-footer" style="background-color:darkgray; text-align: center; color: black;">
                     <p class="card-text">{{ sala.Horario }}</p>
                     <p><a href="detalleSala/{{ sala.SalaId }}">Información</a></p>
                 </div>

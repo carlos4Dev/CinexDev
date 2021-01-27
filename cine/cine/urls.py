@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from sala.Controllers.IndexController import IndexController
 from sala.Controllers.Salas_Controller import Salas_Controller
 
@@ -25,5 +27,4 @@ urlpatterns = [
     path('salas/', Salas_Controller.index, name='salas'),
     path('salas/detalleSala/<int:numero>/', Salas_Controller.detalleSala, name='detalleSala'),
     path('salas/cartelera/', Salas_Controller.cartelera, name='cartelera'),
-
-]
+]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
