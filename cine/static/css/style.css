@@ -18,6 +18,77 @@ body {
 .sheetSlider {
     text-align: center;
 }
-
+.move {
+    position: relative;
+    display: inline-block;
+    border: 2px solid green;
+    padding: 10px 30px;
+    overflow: hidden;
+    text-decoration: none;
+    width:175px;
+}
+.move:link, .move:visited {
+    color: green;
+}
+.move:hover {
+    color: white;
+}
+.move::after {
+    content: " ";
+    position: absolute;
+    background-color: green;
+    transition: all 0.15s;
+    z-index: -1;
+}
+.moveRight {
+    border: 2px solid goldenrod;
+}
+.moveRight:link, .move:visited {
+    color: white;
+}
+.moveRight:after {
+    top:0;
+    left:0;
+    height:100%;
+    width:0;
+}
+.moveRight:before {
+    content:' ';
+    position: absolute;;
+    right:10px;
+    font-size: 24px;
+    top:4px;
+}
+.moveRight:hover:after {
+    background-color: goldenrod;
+    transition: all 0.15s;
+    width:100%;
+}
+.moveLeft::after {
+    top:0;
+    left:100%;
+    height: 100%;
+    width: 100%;
+}
+.moveLeft::before {
+    content:"<<  ";
+    position: relative;
+    left: 2px;
+    font-size: 18px;
+    top: 4x;
+}
+.moveLeft:hover::after {
+    transition: all 0.15s;
+    left:0;
+}
+.zoom {
+    /*Aumento la anchura y altura durante 2 segundos*/
+    transition: width 2s, height 2s, transform 2s;
+}
+.zoom:hover{
+    /*Transformo el elemento al pasar el mouse por encima
+    el doble de su tamañano con scale(2).*/
+    transform: scale(2);
+}
 
 
